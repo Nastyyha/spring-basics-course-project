@@ -4,9 +4,7 @@ import com.yet.spring.core.beans.Event;
 
 public class ConsoleEventLogger extends AbstractLogger {
 
-	@Override
-	public void logEvent(Event event) {
-		System.out.println(event.toString());
-	}
-
-}
+    @Override
+    public void logEvent(Event event) {
+        System.out.println("[CONSOLE] " + event.toString());
+    }}

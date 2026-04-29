@@ -18,13 +18,13 @@
    <context:property-placeholder location="${CLIENT_PROPS:classpath:client.properties}, 
                                            ${DB_PROPS:classpath:db.properties}"
         system-properties-mode="OVERRIDE" ignore-resource-not-found="false"/>
-
     <bean id="client" class="com.yet.spring.core.beans.Client"
-        p:greeting="${greeting}">
+          p:greeting="${greeting}">
         <constructor-arg index="0" value="${id}" />
-        <constructor-arg value="${name}" />
+        <constructor-arg index="1" value="${name}" />
+        <constructor-arg index="2" value="${city:Unknown}" />
+        <!-- ${city:Unknown} означает: если city не найден в properties, то значение "Unknown" -->
     </bean>
-
     <util:map id="loggerMap">
         <entry key="INFO" value-ref="consoleEventLogger" />
         <entry key="ERROR" value-ref="combinedEventLogger" />

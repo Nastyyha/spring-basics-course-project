@@ -13,10 +13,10 @@
 	<bean id="consoleEventLogger" class="com.yet.spring.core.loggers.ConsoleEventLogger"
 		p:name="Console logger" />
 
-	<bean id="fileEventLogger" class="com.yet.spring.core.loggers.FileEventLogger"
-		init-method="init" p:name="File logger">
-		<constructor-arg value="target/events_log.txt" />
-	</bean>
+    <bean id="fileEventLogger" class="com.yet.spring.core.loggers.FileEventLogger"
+          init-method="init" p:name="File logger">
+        <constructor-arg value="C:/Users/farla/IdeaProjects/laba_8.1/spring-basics-course-project/logs/events_log.txt" />
+    </bean>
 
 	<bean id="cacheFileEventLogger" class="com.yet.spring.core.loggers.CacheFileEventLogger"
 		destroy-method="destroy" parent="fileEventLogger">
