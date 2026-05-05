@@ -20,5 +20,11 @@
           init-method="init" destroy-method="destroy">
         <constructor-arg ref="jdbcTemplate"/>
     </bean>
+    <bean id="h2WebServer" class="org.h2.tools.Server"
+          factory-method="createWebServer"
+          init-method="start"
+          destroy-method="stop">
+        <constructor-arg value="-web,-webPort,8082,-webAllowOthers"/>
+    </bean>
 
 </beans>
